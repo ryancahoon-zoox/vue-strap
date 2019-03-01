@@ -88,7 +88,7 @@ export default {
     filteredOptions () {
       var search = (this.searchValue || '').toLowerCase()
       return !search ? this.list : this.list.filter(el => {
-        return ~el[this.optionsLabel].toLowerCase().search(search)
+        return el[this.optionsLabel].toLowerCase().includes(search)
       })
     },
     hasParent () { return this.parent instanceof Array ? this.parent.length : this.parent },
